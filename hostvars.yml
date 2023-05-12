@@ -1,1 +1,54 @@
-
+---
+router001:
+  router_id: "11.11.11.11"
+  interfaces:
+    - { interface: "interface g4", desc: "R2", ip: "10.10.12.1", mask: "255.255.255.0", area: 0, passive: false, enabled: true }
+    - { interface: "interface g1", desc: "R4", ip: "10.10.14.1", mask: "255.255.255.0", area: 0, passive: false, enabled: true }
+    - { interface: "interface g2", desc: "R3", ip: "10.10.13.1", mask: "255.255.255.0", area: 0, passive: false, enabled: true }
+    - { interface: "interface g3", desc: "R5", ip: "10.10.15.1", mask: "255.255.255.0", area: 1, passive: false, enabled: true }
+    - { interface: "Loopback0", desc: "Router ID", ip: "11.11.11.11", mask: "255.255.255.255", area: 0, passive: true, enabled: true }
+router002:
+  router_id: "22.22.22.22"
+  interfaces:
+    - { interface: "interface g4", desc: "R1", ip: "10.10.12.2", mask: "255.255.255.0", area: 0, passive: false, enabled: true }
+    - { interface: "interface g1", desc: "R3", ip: "10.10.23.1", mask: "255.255.255.0", area: 0, passive: false, enabled: true }
+    - { interface: "interface g2", desc: "R4", ip: "10.10.24.1", mask: "255.255.255.0", area: 0, passive: false, enabled: true }
+    - { interface: "interface g3", desc: "R6", ip: "10.10.26.1", mask: "255.255.255.0", area: 2, passive: false, enabled: true }
+    - { interface: "Loopback0", desc: "Router ID", ip: "22.22.22.22", mask: "255.255.255.255", area: 0, passive: true, enabled: true }
+router003:
+  router_id: "33.33.33.33"
+  interfaces:
+    - { interface: "interface g3", desc: "R4", ip: "10.10.34.1", mask: "255.255.255.0", area: 0, passive: false, enabled: true }
+    - { interface: "interface g2", desc: "R2", ip: "10.10.23.2", mask: "255.255.255.0", area: 0, passive: false, enabled: true }
+    - { interface: "interface g1", desc: "R1", ip: "10.10.13.2", mask: "255.255.255.0", area: 0, passive: false, enabled: true }
+    - { interface: "interface g4", desc: "R5", ip: "10.10.35.1", mask: "255.255.255.0", area: 1, passive: false, enabled: true }
+    - { interface: "Loopback0", desc: "Router ID", ip: "33.33.33.33", mask: "255.255.255.255", area: 0, passive: true, enabled: true }
+router004:
+  router_id: "44.44.44.44"
+  interfaces:
+    - { interface: "interface g3", desc: "R3", ip: "10.10.34.2", mask: "255.255.255.0", area: 0, passive: false, enabled: true }
+    - { interface: "interface g1", desc: "R1", ip: "10.10.14.2", mask: "255.255.255.0", area: 0, passive: false, enabled: true }
+    - { interface: "interface g2", desc: "R2", ip: "10.10.24.2", mask: "255.255.255.0", area: 0, passive: false, enabled: true }
+    - { interface: "interface g4", desc: "R6", ip: "10.10.46.1", mask: "255.255.255.0", area: 2, passive: false, enabled: true }
+    - { interface: "Loopback0", desc: "Router ID", ip: "44.44.44.44", mask: "255.255.255.255", area: 0, passive: true, enabled: true }
+router005:
+  router_id: "55.55.55.55"
+  interfaces:
+    - { interface: "interface g3", desc: "R1", ip: "10.10.15.2", mask: "255.255.255.0", area: 1, passive: false, enabled: true }
+    - { interface: "interface g4", desc: "R3", ip: "10.10.35.2", mask: "255.255.255.0", area: 1, passive: false, enabled: true }
+    - { interface: "Loopback0", desc: "Router ID", ip: "55.55.55.55", mask: "255.255.255.255", area: 0, passive: true, enabled: true }
+router006:
+  router_id: "66.66.66.66"
+  interfaces:
+    - { interface: "interface g1", desc: "R7", ip: "10.10.67.1", mask: "255.255.255.0", area: 3, passive: false, enabled: true }
+    - { interface: "interface g3", desc: "R2", ip: "10.10.26.2", mask: "255.255.255.0", area: 2, passive: false, enabled: true }
+    - { interface: "interface g4", desc: "R4", ip: "10.10.46.2", mask: "255.255.255.0", area: 2, passive: false, enabled: true }
+    - { interface: "Loopback0", desc: "Router ID", ip: "66.66.66.66", mask: "255.255.255.255", area: 0, passive: true, enabled: true }
+router007:
+  router_id: "77.77.77.77"
+  interfaces:
+    - { interface: "interface g1", desc: "R6", ip: "10.10.67.2", mask: "255.255.255.0", area: 3, passive: false, enabled: true }
+    - { interface: "Loopback0", desc: "Router ID", ip: "77.77.77.77", mask: "255.255.255.255", area: 0, passive: true, enabled: true }
+# Set variables for the current host
+interfaces: "{{ vars[inventory_hostname].interfaces }}"
+router_id: "{{ vars[inventory_hostname].router_id }}"
