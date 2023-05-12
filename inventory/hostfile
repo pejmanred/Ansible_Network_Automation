@@ -1,1 +1,7 @@
-
+[routers]
+router001 ansible_host=10.20.30.41
+router002 ansible_host=10.20.30.42
+router003 ansible_host=10.20.30.43
+router004 ansible_host=10.20.30.44
+router005 ansible_host=10.20.30.45
+router006 ansible_host=10.20.30.46
