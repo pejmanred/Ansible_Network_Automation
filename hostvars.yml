@@ -50,5 +50,5 @@ router007:
     - { interface: "interface g1", desc: "R6", ip: "10.10.67.2", mask: "255.255.255.0", area: 3, passive: false, enabled: true }
     - { interface: "Loopback0", desc: "Router ID", ip: "77.77.77.77", mask: "255.255.255.255", area: 0, passive: true, enabled: true }
 # Set variables for the current host
-interfaces: "{{ vars[inventory_hostname].interfaces }}"
-router_id: "{{ vars[inventory_hostname].router_id }}"
+interfaces: "{{ hostvars[inventory_hostname].interfaces }}"
+router_id: "{{ hostvars[inventory_hostname].router_id }}"
